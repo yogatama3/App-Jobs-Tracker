@@ -1,24 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>App Jobs Tracker</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background-color: #f8f9fa;
+    }
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      pointer-events: auto;
+    }
+  </style>
 </head>
 <body>
+
   <iframe 
-    src="https://script.google.com/macros/s/AKfycbzZYPz4yapa1vgF-QzBI5XvrR9RyKdZ8skEmCpQ79WTAJWTFwRTm0dDYyvgqTFGSUbZ/exec"
-    width="100%"
-    height="100%"
-    allowfullscreen="true"
-    style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; border: none;">
+    src="https://script.google.com/macros/s/AKfycbzZYPz4yapa1vgF-QzBI5XvrR9RyKdZ8skEmCpQ79WTAJWTFwRTm0dDYyvgqTFGSUbZ/exec" 
+    allow="clipboard-read; clipboard-write; geolocation"
+    allowfullscreen="true">
   </iframe>
 
   <script>
     window.onload = function() {
-      document.querySelector('iframe')
-        .requestFullscreen()
-        .catch((err) => {
-          console.error('Error attempting to enable full-screen mode:', err.message);
-        });
+      const frame = document.querySelector('iframe');
+      frame.focus();
     };
   </script>
 </body>
